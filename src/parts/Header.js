@@ -1,14 +1,31 @@
 import React  from "react"
 import Button from "../elements/button/index"
 import BrandIcon from "./IconText"
+import Fade from 'react-reveal'
 
 export default function Header(props){
-
+    // console.log(props.location.pathname)
     const getNavLinkClass = path => {
         return props.location.pathname === path ? "active" : ""
     }
 
+    if(props.isCentered)
+        return(
+            <Fade>
+                <header className="spacing-sm">
+                    <div className="container">
+                        <nav className="navbar navbar-expand-lg navbar-light">
+                            <Button className="brand-text-icon mx-auto" href="" type="link">
+                            <BrandIcon />
+                            </Button>
+                        </nav>
+                    </div>
+                </header>
+            </Fade>
+        );
+
     return(
+        <Fade>
         <header className="spacing-sm">
             <div className="container">
                 <nav className="navbar navbar-expand-lg navbar=light">
@@ -40,5 +57,6 @@ export default function Header(props){
                 </nav>
             </div>
         </header>
+        </Fade>
     )
 }

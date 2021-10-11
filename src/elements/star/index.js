@@ -4,6 +4,7 @@ import propTypes from "prop-types";
 
 import "./index.scss";
 export default function Star({ className, value, height, width, spacing }) {
+  // console.log({height})
   const decimals = Number(value) % 1;
 
   const star = [];
